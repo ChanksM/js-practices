@@ -1,14 +1,8 @@
-var val = 'g';
+var val = 'd';
 
-if (val == 'a') {
+if (val === 'a') {
     console.log('a');
-} else if (val == 'b') {
-    console.log('others');
-} else if (val == 'c') {
-    console.log('others');
-} else if (val == 'd') {
-    console.log('others');
-} else if (val == 'e') {
+} else if (val === 'b' || val === 'c' || val === 'd' || val === 'e') {
     console.log('others');
 } else {
     console.log('unknown');
