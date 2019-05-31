@@ -1,4 +1,4 @@
-function Every(arr, cb, acc) {
+function Every(arr, cb) {
     if (!Array.isArray(arr)) {
         throw new Error('first parameter should be an Array');
     } else if (typeof cb != 'function') {
