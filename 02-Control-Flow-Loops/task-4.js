@@ -1,4 +1,4 @@
-var a = 2;
+let a = 2;
 
 switch (a) {
     case 0:
