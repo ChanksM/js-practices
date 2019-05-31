@@ -18,4 +18,4 @@ console.log(mix(() => {
     return prev + 1;
 }, (prev) => {
     return prev * 2;
-}))  // 2
+})) // 2
