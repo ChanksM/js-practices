@@ -8,9 +8,7 @@ function ReduceRight(arr, cb, acc) {
     }
 
     for (let i = (arr.length - 1); i >= 0; i--) {
-        if (cb(acc, arr[i], i, arr)) {
-            acc = cb(acc, arr[i], i, arr)
-        }
+        acc = cb(acc, arr[i], i, arr)
     }
     return acc
 }

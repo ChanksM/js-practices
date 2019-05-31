@@ -8,9 +8,8 @@ function Reduce(arr, cb, acc) {
     }
 
     for (let i = 0; i < arr.length; i++) {
-        if (cb(acc, arr[i], i, arr)) {
-            acc = cb(acc, arr[i], i, arr);
-        }
+        acc = cb(acc, arr[i], i, arr);
+
     }
     return acc;
 }
