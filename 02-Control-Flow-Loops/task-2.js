@@ -1,8 +1,8 @@
 let login = 'Pitter';
 
 let message = (login == 'Pitter') ? 'hi' :
-    login == 'Owner' ? message = 'Hello' :
-    login == '' ? message = 'unknown' :
+    (login == 'Owner') ? 'Hello' :
+    (login == '') ? 'unknown' :
     message = '';
 
 console.log(message);
