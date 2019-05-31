@@ -9,7 +9,6 @@ function Reduce(arr, cb, acc) {
 
     for (let i = 0; i < arr.length; i++) {
         acc = cb(acc, arr[i], i, arr);
-
     }
     return acc;
 }
