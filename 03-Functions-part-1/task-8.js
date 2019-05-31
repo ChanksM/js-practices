@@ -1,20 +1,22 @@
-var digits = [1, 3, 5, 8]
-
 function f(digits){
-    var sum = 0
 
     if (digits.length === 0) {
         throw new Error ('parameter cant be an empty')
+    } else if ( !Array.isArray(digits) ) {
+        throw new Error('parameter type should be an array')
     }
 
-	for (var i = 0; i < digits.length; i++) {
-        if (!isNaN(digits[i])) {
-            sum += digits[i];
-        } else {
-            throw new Error ('parameter type should be an array'); 
-        }
+    console.log(digits[0])
+    digits.splice(0, 1);
+    
+    if (digits.length > 0) {
+        return f(digits);
+    } else {
+        return false
     }
-	return sum
 }
 
-console.log(f(digits))
+f([1,2,3]);
+f(1,2,3);
+f('Content');
+f([]);

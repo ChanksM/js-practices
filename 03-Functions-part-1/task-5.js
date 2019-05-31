@@ -6,9 +6,9 @@ function f() {
             arr2.push(i)
         }
     }
-    console.log(arr2);
+    return arr2;
 }
-f(arr1);
+console.log(f(arr1));
 
 function isPositive(num) {
     if (typeof num !== "number"){
@@ -19,6 +19,6 @@ function isPositive(num) {
         return false;
     }
 }
-isPositive(-3)
-isPositive(3)
-isPositive('s')
+isPositive(-3);
+isPositive(3);
+isPositive('s');

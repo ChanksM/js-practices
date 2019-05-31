@@ -1,14 +1,15 @@
-var isEven = function (num) {
+let isEven = function (num) {
     if (typeof num !== "number"){
         throw new Error('parameter type is not a Number')
     }
-    else if (num % 2 ===0) {
-        console.log(true);
+    else if (num % 2 === 0) {
+        return true;
     }
     else {
-        console.log(false);
+        return false;
     }
 }
-isEven(3);
-isEven(4);
-isEven('Content');
+
+console.log(isEven(3));
+console.log(isEven(4));
+console.log(isEven('Content'));
