@@ -1,4 +1,4 @@
-let f = function(a, b, c) {
+const f = function(a, b, c) {
 
     if (typeof a === 'number' && typeof b === 'number' && typeof c === 'number') {
         return ((a - b) / c);

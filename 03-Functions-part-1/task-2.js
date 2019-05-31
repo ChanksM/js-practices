@@ -1,4 +1,4 @@
-let f = function (){
+const f = function (){
 
     let sum = 0;
     for (let i of arguments) {

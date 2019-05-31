@@ -1,4 +1,4 @@
-let f = function (num) {
+const f = function (num) {
     let check = [1, 2, 3, 4, 5, 6, 7];
     if (num in check && typeof num === 'number') {
         if (num === 1) {

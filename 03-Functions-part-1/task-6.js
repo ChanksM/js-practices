@@ -1,4 +1,4 @@
-let isEven = function (num) {
+const isEven = function (num) {
     if (typeof num !== "number"){
         throw new Error('parameter type is not a Number')
     }

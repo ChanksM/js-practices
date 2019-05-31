@@ -1,4 +1,4 @@
-let getDivisors = function (num) {
+const getDivisors = function (num) {
     let divisors = [];
     if (typeof num !== 'number') {
         throw new Error ('parameter type is not a Number');
