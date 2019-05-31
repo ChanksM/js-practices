@@ -4,7 +4,7 @@ function forEach (arr, cb) {
     } else if (typeof cb != 'function') {
         throw new Error('Second parameters must be Function');
     }
-    for ( var i = 0; i < arr.length; i++ ) {
+    for ( let i = 0; i < arr.length; i++ ) {
         cb(arr[i], i, arr);
     }
 }
