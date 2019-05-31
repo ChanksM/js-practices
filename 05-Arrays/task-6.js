@@ -7,7 +7,7 @@ function ReduceRight(arr, cb, acc) {
         throw new Error('third parameter must be number or string')
     }
 
-    for (var i = (arr.length - 1); i >= 0; i--) {
+    for (let i = (arr.length - 1); i >= 0; i--) {
         if (cb(acc, arr[i], i, arr)) {
             acc = cb(acc, arr[i], i, arr)
         }
