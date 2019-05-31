@@ -4,17 +4,13 @@ function forEach (arr, cb) {
     } else if (typeof cb != 'function') {
         throw new Error('Second parameters must be Function');
     }
-    for(var i = 0; i < arr.length; i++) {
-        var elem = arr[i];
-  
-        cb(elem, i, arr);
+    for ( var i = 0; i < arr.length; i++ ) {
+        cb(arr[i], i, arr);
     }
 }
 
-
 const arr = [1,2,3];
 
-console.log(forEach(arr, function(elem, i, arr) {
-    console.log(elem, i, arr);
-}));
-
+forEach(arr, function(item, i, arr) {
+    console.log(`element ${item} \nindex ${i} \narrays is ${arr}`);
+});

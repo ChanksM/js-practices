@@ -1,15 +1,13 @@
-var every = function(arr, cb) {
+function Every(arr, cb, acc) {
     if (!Array.isArray(arr)) {
         throw new Error('first parameter should be an Array');
-    }
-
-    if (typeof cb != 'function') {
+    } else if (typeof cb != 'function') {
         throw new Error('second parameter should be a Function');
     }
 
 
-    for (let i of arr) {
-        if (cb(i)) {
+    for ( let i = 0; i < arr.length; i++ ) {
+        if (cb(arr[i], i, arr)) {
             continue;
         } else {
             return false;
@@ -18,9 +16,9 @@ var every = function(arr, cb) {
     return true;
 }
 
-let arr = [2, 2, 4, 2];
+let arr = [5, 2, 4, 1];
 
-let result = every(arr, function(item) {
+const result = Every(arr, function(item, i, arr) {
     return item % 2 === 0;
 })
 
