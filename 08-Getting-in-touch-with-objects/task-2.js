@@ -18,10 +18,8 @@ Object.defineProperty(person, 'salary', {
         }
     },
     set(value) {
-        if (value !== person.rate) {
-            throw new Error('salary can\'t be changed');
-        }
+        throw new Error('salary can\'t be changed');
     },
 });
-person.salary = 10;
+person.salary = 30;
 console.log(person.salary);
