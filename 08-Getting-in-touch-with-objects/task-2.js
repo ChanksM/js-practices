@@ -17,7 +17,7 @@ Object.defineProperty(person, 'salary', {
             return 0;
         }
     },
-    set(value) {
+    set() {
         throw new Error('salary can\'t be changed');
     },
 });
