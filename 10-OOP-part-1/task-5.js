@@ -15,16 +15,14 @@ function CoffeeMachine(power, capacity) {
 		}
 		waterAmount = amount;
 	};
-	
-    function onReady() {
-		console.log('Coffee is ready');
-    }
-    const cbOnReady = function() {
-        result = false;
+	const cbOnReady = function() {
+        timer = void 0;
         onReady();
     }
 
-    let result = false;
+    function onReady() {
+		console.log('Coffee is ready');
+    }
 
     this.setOnReady = function(updateOnReady) {
         onReady = updateOnReady;
@@ -33,13 +31,14 @@ function CoffeeMachine(power, capacity) {
     let timer;
 	this.run = function() {
         timer = setTimeout(cbOnReady, getTimeToBoil());
-        if (timer) {
-            result = true;
-        }
     };
     
     this.isRunning = function() {
-        return result;
+        if (timer) {
+            return true
+        }  else {
+            return false;
+        }
     }
 }
 
