@@ -29,10 +29,13 @@ function CoffeeMachine(power, capacity) {
     this.setOnReady = function(updateOnReady) {
         onReady = updateOnReady;
     }
-
+    
+    let timer;
 	this.run = function() {
-        result = true;
-		setTimeout(cbOnReady, getTimeToBoil());
+        timer = setTimeout(cbOnReady, getTimeToBoil());
+        if (timer) {
+            result = true;
+        }
     };
     
     this.isRunning = function() {

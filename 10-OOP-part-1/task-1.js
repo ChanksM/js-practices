@@ -8,6 +8,7 @@ function CoffeeMachine(power) {
 	}
 	
     function onReady() {
+        timer = void 0;
         console.log('Coffee is ready');
 	}
     
