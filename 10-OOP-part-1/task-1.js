@@ -8,16 +8,19 @@ function CoffeeMachine(power) {
 	}
 	
     function onReady() {
-		console.log('Coffee is ready');
+        console.log('Coffee is ready');
 	}
     
     let timer;
     this.run = function() {
-		timer =  setTimeout(onReady, getBoilTime());
+        timer =  setTimeout(onReady, getBoilTime());
     };
     
     this.stop = function(){
-        clearTimeout(timer);
+        if (timer) {
+            clearTimeout(timer);
+            timer = void 0;
+        }
         console.log("coffee isn't ready");
     }
 }
