@@ -34,11 +34,7 @@ function CoffeeMachine(power, capacity) {
     };
     
     this.isRunning = function() {
-        if (timer) {
-            return true
-        }  else {
-            return false;
-        }
+        return !!timer
     }
 }
 
