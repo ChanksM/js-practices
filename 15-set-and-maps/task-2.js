@@ -42,7 +42,6 @@ class DB {
             throw new Error('second parameter must be an object');
         }
 
-        // const user = this.data.get(id);
         if (this.data.get(id)) {
             this.data.set(id, {...this.data.get(id), ...obj})
             return id
@@ -105,8 +104,3 @@ const query = {
 };
 const customers = db.find(query); // array of users
 console.log(customers)
-// let i = '25'
-// var num = /[1-50]/g;
-// if (i.match(num)){
-//     console.log(i)
-// }
