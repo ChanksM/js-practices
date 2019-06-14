@@ -1,6 +1,6 @@
 function isCustomerVerified(item) {
     return new Promise(function(resolve, reject) {
-        if(item.verified === true) {
+        if(!!item.verified) {
             resolve('true');
         } else {
             reject('Customer is not verified');

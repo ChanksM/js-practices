@@ -1,4 +1,5 @@
 function getCustomers(item1, item2) {
+    let lucky = []
     let result;
     return new Promise(function (resolve, reject) {
         for (let i of item1) {
@@ -6,13 +7,14 @@ function getCustomers(item1, item2) {
                 if (i.id === j.id && !!i.verified && !!j.verified) {
                     i.country = j.country
                     result = i
+                    lucky.push(result)
                 } else if (!!item2.id) {
                     reject(`We don't have information about country for this customer: ${item2.name}`)
                 }
             }
         }
         if (result) {
-            resolve(result);
+            resolve(lucky);
         } else {
             reject('error')
         }
