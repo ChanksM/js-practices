@@ -3,18 +3,31 @@ class DB {
         this.data = new Map();
     }
 
+    validate(item, type, arg) {
+        if ( typeof item !== type ) {
+            throw new Error(`${arg} type must be a ${type}`);
+        }
+        return this;
+    }
+
     create(obj) {
         if (typeof obj !== 'object') {
             throw new Error('create parameter must be an object')
         }
+        const { name, age, country, salary } = obj;
+        this.validate(name, 'string', 'Name')
+            .validate(age, 'number', 'Age')
+            .validate(country, 'string', 'Country')
+            .validate(salary, 'number', 'Salary');
+
         let userID = new Date().getTime().toString();
         this.data.set(userID, obj);
         return userID;
     }
     
     read(id) {
-        if (typeof id !== 'string') {
-            throw new Error('read parameter must be a string')
+        if (!id || typeof id !== 'string') {
+            throw new Error('read parameter is required and must be a string')
         } else if (id.length === 0) {
             throw new Error('U should pass a parameter for read')
         } else {
@@ -37,12 +50,11 @@ class DB {
 
     update(id, obj) {
         if (!id || typeof id !== 'string') {
-            throw new Error('first paramater must be a string');
+            throw new Error('first parameter is required and must be a string');
         } else if(!obj || typeof obj !== 'object') {
-            throw new Error('second parameter must be a object');
+            throw new Error('second parameter is required and must be an object');
         }
 
-        // const user = this.data.get(id);
         if (this.data.get(id)) {
             this.data.set(id, {...this.data.get(id), ...obj})
             return id

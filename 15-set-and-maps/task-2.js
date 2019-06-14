@@ -2,19 +2,19 @@ class DB {
     constructor(){
         this.data = new Map();
     }
-
     create(obj) {
         if (typeof obj !== 'object') {
             throw new Error('create parameter must be an object')
         }
+
         let userID = new Date().getTime().toString();
         this.data.set(userID, obj);
         return userID;
     }
     
     read(id) {
-        if (typeof id !== 'string') {
-            throw new Error('read parameter must be a string')
+        if (!id || typeof id !== 'string') {
+            throw new Error('read parameter is required and must be a string')
         } else if (id.length === 0) {
             throw new Error('U should pass a parameter for read')
         } else {
@@ -62,6 +62,7 @@ class DB {
         if (!obj || typeof obj !== 'object') {
             throw new Error('parameter must be an object')
         }
+
         let registeredUser = this.readAll();
         let result = []
         return registeredUser.filter(user => {
