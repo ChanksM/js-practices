@@ -5,6 +5,8 @@ class Customers {
     add(obj) {
         if(!obj || typeof obj !== 'object') {
             throw new Error('add parameter must be an object');
+        } else if(typeof obj.name === 'string') {
+            throw new Error('name parameter must be a string')
         }
         this.users.push(obj)
     }
