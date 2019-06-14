@@ -1,5 +1,4 @@
 class MyString {
-    constructor(){}
 
     reverse(str){
         let stringRev ="";
