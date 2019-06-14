@@ -66,6 +66,8 @@ class DB {
     delete(id) {
         if (!id || typeof id !== 'string') {
             throw new Error('paramater must be a string');
+        } else if(!this.data.has(id)) {
+            throw new Error('paramater doesn\'t exist a string');
         } else if(this.data.get(id)) {
             return this.data.delete(id);
         }
